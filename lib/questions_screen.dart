@@ -21,13 +21,8 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
         children: [
           Text(currentQuestions.text, style: TextStyle(color: Colors.white)),
           const SizedBox(height: 30),
-          AnwserButton(answerText: currentQuestions.answers[0], onTap: () {}),
-          const SizedBox(height: 10),
-          AnwserButton(answerText: currentQuestions.answers[1], onTap: () {}),
-          const SizedBox(height: 10),
-          AnwserButton(answerText: currentQuestions.answers[2], onTap: () {}),
-          const SizedBox(height: 10),
-          AnwserButton(answerText: currentQuestions.answers[3], onTap: () {}),
+          ...currentQuestions.answers.map((answer) =>AnwserButton(answerText: answer, onTap: (){},))
+  
         ],
       ),
     );
