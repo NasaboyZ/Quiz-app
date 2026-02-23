@@ -23,6 +23,7 @@ class StartScreen extends StatelessWidget {
             style: GoogleFonts.roboto(
               color: const Color.fromARGB(255, 233, 227, 227),
               fontSize: 24,
+              fontWeight: FontWeight.bold
             ),
           ),
           const SizedBox(height: 30),
