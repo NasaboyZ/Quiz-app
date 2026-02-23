@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quizapp/data/questions.dart';
 
+import 'package:flutter_quizapp/question_summery.dart';
+
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({super.key, required this.chossenAnswers});
 
@@ -14,7 +16,7 @@ class ResultsScreen extends StatelessWidget {
         'question_index': i,
         'question': questions[i].text,
         'currect_answer': questions[i].answers[0],
-        'user_anser': chossenAnswers[i],
+        'user_answer': chossenAnswers[i],
       });
     }
 
@@ -32,7 +34,7 @@ class ResultsScreen extends StatelessWidget {
           children: [
             const Text('You answerd X out of Y Questions correctly'),
             const SizedBox(height: 30),
-            const Text('list of Answers and Questions'),
+            QuestionSummery(getSummaryData()),
             const SizedBox(height: 30),
             TextButton(onPressed: () {}, child: Text('Restart Quiz!')),
           ],
